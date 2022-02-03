@@ -19,12 +19,14 @@ export default function Home({coffeeStores}) {
     })
   }
 
+  useEffect(getLocation, []);
+
  function handleOnButtonClick(){
     console.log('hi')
     return 'hi';
   }
 
-  useEffect(getLocation, []);
+  
 
   console.log(`status = ${status} coords = ${coords}`)
 
