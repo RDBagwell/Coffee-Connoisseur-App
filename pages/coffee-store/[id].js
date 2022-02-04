@@ -4,9 +4,7 @@ import Head from "next/head";
 import Image from 'next/image';
 import cls from 'classnames';
 import {getCoffeeShops} from '../../lib/coffee-shops';
-import coffeeStoreData from '../../data/coffee-stores.json';
 import styles from "../../styles/coffee-store.module.css";
-
 
 export default function CoffeeStaore({coffeeStores}) {
     const router = useRouter();
@@ -20,7 +18,7 @@ export default function CoffeeStaore({coffeeStores}) {
         return stars++;
     }
 
-    const {name, location, imgUrl} = coffeeStores
+    const {name, location, imageURL} = coffeeStores
     return (
         <div className={styles.layout}> 
             <Head>
@@ -36,7 +34,7 @@ export default function CoffeeStaore({coffeeStores}) {
                     <div className={styles.nameWrapper}>
                         <h1 className={styles.name}>{name}</h1>
                     </div>
-                    <Image src={imgUrl || 'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'} width={600} height={360} className={styles.storeImg} alt={name} />
+                    <Image src={imageURL || 'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'} width={600} height={360} className={styles.storeImg} alt={name} />
                 </div>
                 <div className={cls("glass",styles.col2)}>
                     <div className={styles.iconWrapper}>

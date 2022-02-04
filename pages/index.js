@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
@@ -8,17 +7,6 @@ import Card from '../commponents/Card';
 import {getCoffeeShops} from '../lib/coffee-shops';
 
 export default function Home({coffeeStores}) {
-  const [coords, setCoords] = useState(null);
-  const [status, setStatus] = useState('Locating...');
-
-  function getLocation(){
-    navigator.geolocation.getCurrentPosition((postion)=>{
-      setStatus('OK');
-      setCoords(`${postion.coords.latitude},${postion.coords.longitude}`);
-    })
-  }
-
-  useEffect(getLocation, []);
 
  function handleOnButtonClick(){
     console.log('hi')
@@ -43,7 +31,7 @@ export default function Home({coffeeStores}) {
             <div className={styles.cardLayout}>
               {coffeeStores.map((store)=>{
                 console.log(store)
-                return <Card key={store.fsq_id} className={styles.card} name={store.name} href={`/coffee-store/${store.fsq_id}`} imageURL={store.imgUrl || 'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'}  />
+                return <Card key={store.fsq_id} className={styles.card} name={store.name} href={`/coffee-store/${store.fsq_id}`} imageURL={store.imageURL || 'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'}  />
               })}
             </div>
           </>
