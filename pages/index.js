@@ -5,16 +5,15 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Banner from '../commponents/Banner';
 import Card from '../commponents/Card';
-import coffeeStoreData from '../data/coffee-stores.json';
+import {getCoffeeShops} from '../lib/coffee-shops';
 
 export default function Home({coffeeStores}) {
-
   const [coords, setCoords] = useState(null);
   const [status, setStatus] = useState('Locating...');
 
   function getLocation(){
     navigator.geolocation.getCurrentPosition((postion)=>{
-      setStatus(null);
+      setStatus('OK');
       setCoords(`${postion.coords.latitude},${postion.coords.longitude}`);
     })
   }
@@ -25,10 +24,6 @@ export default function Home({coffeeStores}) {
     console.log('hi')
     return 'hi';
   }
-
-  
-
-  console.log(`status = ${status} coords = ${coords}`)
 
   return (
     <div className={styles.container}>
@@ -44,10 +39,11 @@ export default function Home({coffeeStores}) {
         </div>
         {coffeeStores.length > 0 && (
           <>
-            <h2 className={styles.heading2}>Toronto Stores</h2>
+            <h2 className={styles.heading2}>Local Stores</h2>
             <div className={styles.cardLayout}>
               {coffeeStores.map((store)=>{
-                return <Card key={store.id} className={styles.card} name={store.name} href={`/coffee-store/${store.id}`} imageURL={store.imgUrl}  />
+                console.log(store)
+                return <Card key={store.fsq_id} className={styles.card} name={store.name} href={`/coffee-store/${store.fsq_id}`} imageURL={store.imgUrl || 'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'}  />
               })}
             </div>
           </>
@@ -59,9 +55,10 @@ export default function Home({coffeeStores}) {
 }
 
 export async function getStaticProps(context) {
+  const coffeeStores = await getCoffeeShops();
   return {
     props: {
-      coffeeStores:coffeeStoreData
+      coffeeStores
     },
   }
 }

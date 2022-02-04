@@ -1,0 +1,438 @@
+
+
+{
+    "results": [
+      {
+        "fsq_id": "56e845ea498e87a66806cc93",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [
+          {
+            "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+            "name": "Starbucks"
+          }
+        ],
+        "distance": 1126,
+        "geocodes": {
+          "front_door": {
+            "latitude": 40.38871,
+            "longitude": -111.829251
+          },
+          "main": {
+            "latitude": 40.388767,
+            "longitude": -111.82926299999998
+          }
+        },
+        "location": {
+          "address": "1299 E Main St",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "Lehi",
+          "postcode": "84043",
+          "region": "UT"
+        },
+        "name": "Starbucks",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "551c0612498e496f8a5da221",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [],
+        "distance": 4049,
+        "geocodes": {
+          "main": {
+            "latitude": 40.41232307887606,
+            "longitude": -111.86936180550599
+          }
+        },
+        "location": {
+          "address": "2020 N State St",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "Lehi",
+          "postcode": "84043",
+          "region": "UT"
+        },
+        "name": "Beany's To Go",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "4b82fc79f964a52009f130e3",
+        "categories": [
+          {
+            "id": 13034,
+            "name": "Café",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+              "suffix": ".png"
+            }
+          },
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          },
+          {
+            "id": 13303,
+            "name": "Mexican Restaurant",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/mexican_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [],
+        "distance": 5086,
+        "geocodes": {
+          "main": {
+            "latitude": 40.37332738961971,
+            "longitude": -111.78181803709224
+          }
+        },
+        "location": {
+          "address": "627 E State Rd",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "American Fork",
+          "neighborhood": [
+            "Wing"
+          ],
+          "postcode": "84003",
+          "region": "UT"
+        },
+        "name": "Beany's Espresso",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "5b1f0bfdc0f163002c96ff27",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [
+          {
+            "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+            "name": "Starbucks"
+          }
+        ],
+        "distance": 2200,
+        "geocodes": {
+          "main": {
+            "latitude": 40.378694,
+            "longitude": -111.815179
+          }
+        },
+        "location": {
+          "address": "608 W Main St",
+          "address_extended": "Ste F1",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "American Fork",
+          "postcode": "84003",
+          "region": "UT"
+        },
+        "name": "Starbucks",
+        "related_places": {
+          "parent": {
+            "fsq_id": "4b3c102cf964a5202d8125e3",
+            "name": "Target"
+          }
+        },
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "523c7c3a498e8150b97cd213",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [
+          {
+            "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+            "name": "Starbucks"
+          }
+        ],
+        "distance": 7090,
+        "geocodes": {
+          "front_door": {
+            "latitude": 40.430936,
+            "longitude": -111.896179
+          },
+          "main": {
+            "latitude": 40.43096068,
+            "longitude": -111.8961572
+          }
+        },
+        "location": {
+          "address": "2951 W Clubhouse Dr",
+          "address_extended": "Ste A",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "Lehi",
+          "postcode": "84043",
+          "region": "UT"
+        },
+        "name": "Starbucks",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "58be20f52ec364604f1b6597",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [
+          {
+            "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+            "name": "Starbucks"
+          }
+        ],
+        "distance": 5318,
+        "geocodes": {
+          "main": {
+            "latitude": 40.429619,
+            "longitude": -111.824732
+          }
+        },
+        "location": {
+          "address": "1550 E 3500 N",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "Lehi",
+          "postcode": "84043",
+          "region": "UT"
+        },
+        "name": "Starbucks",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "555683c1498e5067c1667bfb",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [
+          {
+            "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+            "name": "Starbucks"
+          }
+        ],
+        "distance": 4751,
+        "geocodes": {
+          "main": {
+            "latitude": 40.37368573167567,
+            "longitude": -111.785767170517
+          }
+        },
+        "location": {
+          "address": "496 E State Rd",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "American Fork",
+          "neighborhood": [
+            "Wing"
+          ],
+          "postcode": "84003",
+          "region": "UT"
+        },
+        "name": "Starbucks",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "5965c85c0f013c1243c37af3",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [
+          {
+            "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+            "name": "Starbucks"
+          }
+        ],
+        "distance": 6721,
+        "geocodes": {
+          "main": {
+            "latitude": 40.37485877774433,
+            "longitude": -111.91909205088847
+          }
+        },
+        "location": {
+          "address": "689 N Redwood Rd",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "Saratoga Springs",
+          "postcode": "84045",
+          "region": "UT"
+        },
+        "name": "Starbucks",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "4bbc7a6551b89c74146d872a",
+        "categories": [
+          {
+            "id": 13034,
+            "name": "Café",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/cafe_",
+              "suffix": ".png"
+            }
+          },
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          },
+          {
+            "id": 13334,
+            "name": "Sandwich Restaurant",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/deli_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [],
+        "distance": 1595,
+        "geocodes": {
+          "main": {
+            "latitude": 40.38827649255889,
+            "longitude": -111.82278506750822
+          }
+        },
+        "location": {
+          "address": "933 W 500 N",
+          "address_extended": "Ste 100",
+          "country": "US",
+          "dma": "Salt Lake City",
+          "locality": "American Fork",
+          "postcode": "84003",
+          "region": "UT"
+        },
+        "name": "Beans & Brews",
+        "related_places": {},
+        "timezone": "America/Denver"
+      },
+      {
+        "fsq_id": "5b303e700d8a0f002c0852c2",
+        "categories": [
+          {
+            "id": 13035,
+            "name": "Coffee Shop",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_",
+              "suffix": ".png"
+            }
+          }
+        ],
+        "chains": [
+          {
+            "id": "ab4c54c0-d68a-012e-5619-003048cad9da",
+            "name": "Starbucks"
+          }
+        ],
+        "distance": 7160,
+        "geocodes": {
+          "main": {
+            "latitude": 40.353115,
+            "longitude": -111.765729
+          }
+        },
+        "location": {
+          "address": "1926 W Pleasant Grove Blvd",
+          "country": "US",
+          "cross_street": "",
+          "dma": "Salt Lake City",
+          "locality": "Pleasant Grove",
+          "neighborhood": [
+            "Sam White's Lane"
+          ],
+          "postcode": "84062",
+          "region": "UT"
+        },
+        "name": "Starbucks",
+        "related_places": {},
+        "timezone": "America/Denver"
+      }
+    ],
+    "context": {
+      "geo_bounds": {
+        "circle": {
+          "center": {
+            "latitude": 40.3832832,
+            "longitude": -111.8404608
+          },
+          "radius": 8047
+        }
+      }
+    }
+  }
