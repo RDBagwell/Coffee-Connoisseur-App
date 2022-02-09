@@ -18,7 +18,7 @@ export default function CoffeeStaore({coffeeStores}) {
         return stars++;
     }
 
-    const {name, location, imageURL} = coffeeStores
+    const {name, address, locality, imageURL} = coffeeStores
     return (
         <div className={styles.layout}> 
             <Head>
@@ -39,11 +39,11 @@ export default function CoffeeStaore({coffeeStores}) {
                 <div className={cls("glass",styles.col2)}>
                     <div className={styles.iconWrapper}>
                         <Image src="/static/icons/places.svg" width={24} height={24} />
-                        <p className={styles.text}>{location.address}</p>
+                        {address && (<p className={styles.text}>{address}</p>)}
                     </div>
                     <div className={styles.iconWrapper}>
                         <Image src="/static/icons/nearMe.svg" width={24} height={24} />
-                        <p className={styles.text}>{location.locality}</p>
+                        {locality && (<p className={styles.text}>{locality}</p>)}
                     </div>
                     <div className={styles.iconWrapper}>
                         <Image src="/static/icons/star.svg" width={24} height={24} />
@@ -58,11 +58,12 @@ export default function CoffeeStaore({coffeeStores}) {
 
 export async function getStaticProps({ params }) {
     const coffeeStores = await getCoffeeShops();
+    const findByCoffeeStoreById = coffeeStores.find((coffeeStore)=>{
+        return coffeeStore.fsq_id.toString() === params.id;
+    })
     return {
         props: {
-        coffeeStores:coffeeStores.find((coffeeStore)=>{
-            return coffeeStore.fsq_id.toString() === params.id;
-        })
+        coffeeStores: findByCoffeeStoreById ? findByCoffeeStoreById : {}
         },
     }
 }
