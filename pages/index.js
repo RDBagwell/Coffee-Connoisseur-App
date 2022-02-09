@@ -1,11 +1,11 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
 import styles from '../styles/Home.module.css';
 import Banner from '../commponents/Banner';
 import Card from '../commponents/Card';
-import {ACTION_TYPES, storeContext} from "../pages/_app";
+import {ACTION_TYPES, storeContext} from '../store/store-context';
 
 import {getCoffeeShops} from '../lib/coffee-shops';
 import useTrackLocation from '../hooks/use-track-location';
@@ -19,19 +19,18 @@ export default function Home({coffeeStores}) {
     hanleTrackLocation()
   }
   
-  // const [localStores, setLocalStores] = useState('');
-
   const {dispatch, state} = useContext(storeContext);
   const {localStores, latLong} = state;
 
   useEffect(async()=>{
     if(latLong){
       try {
-        const fetchedCoffeeStores = await getCoffeeShops(latLong, 15);
-        // setLocalStores(fetchedCoffeeStores)
+        const limmit = 15;
+        const fetchedCoffeeStores = await fetch(`/api/getCoffeeStoreByLocation?latLong=${latLong}&limit=${limmit}`);
+         const localStores = await fetchedCoffeeStores.json()
         dispatch({
           type: ACTION_TYPES.SET_LOCAL_STORES,
-          payload: {localStores: fetchedCoffeeStores}
+          payload: {localStores}
         })
       } catch (error) {
          console.log(error);

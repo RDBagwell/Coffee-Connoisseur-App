@@ -1,12 +1,17 @@
-import {useRouter} from "next/router";
+import { useContext, useEffect, useState } from 'react';
+import {useRouter} from 'next/router';
 import Link from 'next/link';
 import Head from "next/head";
 import Image from 'next/image';
 import cls from 'classnames';
-import {getCoffeeShops} from '../../lib/coffee-shops';
-import styles from "../../styles/coffee-store.module.css";
 
-export default function CoffeeStaore({coffeeStores}) {
+import {storeContext} from '../../store/store-context';
+import {getCoffeeShops} from '../../lib/coffee-shops';
+import styles from '../../styles/coffee-store.module.css';
+import {isEmpty} from '../../utils';
+
+
+export default function CoffeeStaore({initialCoffeeStores}) {
     const router = useRouter();
     if (router.isFallback) {
         return <div>Loading...</div>
@@ -18,7 +23,28 @@ export default function CoffeeStaore({coffeeStores}) {
         return stars++;
     }
 
-    const {name, address, locality, imageURL} = coffeeStores
+    const id = router.query.id;
+
+    const [coffeeStore, setCoffeeStore] = useState(initialCoffeeStores);
+
+    const { state: localStores } = useContext(storeContext);
+
+    useEffect(()=>{
+        if(isEmpty(initialCoffeeStores)){
+            const coffeeStores = localStores.localStores;
+            if (coffeeStores.length > 0){
+                const findByCoffeeStoreById = coffeeStores.find((coffeeStore)=>{
+                    return coffeeStore.fsq_id.toString() === id;
+                });
+                setCoffeeStore(findByCoffeeStoreById);
+            }
+        }
+    }, [id]);
+
+   
+
+    const {name, address, locality, imageURL} = coffeeStore;
+
     return (
         <div className={styles.layout}> 
             <Head>
@@ -63,7 +89,7 @@ export async function getStaticProps({ params }) {
     })
     return {
         props: {
-        coffeeStores: findByCoffeeStoreById ? findByCoffeeStoreById : {}
+        initialCoffeeStores: findByCoffeeStoreById ? findByCoffeeStoreById : {}
         },
     }
 }
