@@ -29,6 +29,41 @@ export default function CoffeeStaore({initialCoffeeStores}) {
 
     const { state: localStores } = useContext(storeContext);
 
+    const handleCreateCoffeeStore = async (coffeeStore)=>{
+        try {
+            
+            const {
+                fsq_id,
+                name,
+                locality,
+                address,
+                votes,
+                imageURL
+            } = coffeeStore
+
+            const response =  await fetch('/api/createCoffeeStore',{
+                method: "POST",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify({
+                    id: fsq_id,
+                    name,
+                    locality,
+                    address,
+                    votes: votes || 0,
+                    imageURL
+                })
+            });
+            
+            const dbCoffeeStore = await response.json();
+            console.log({dbCoffeeStore})
+            // console.log({dbCoffeeStore})
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     useEffect(()=>{
         if(isEmpty(initialCoffeeStores)){
             const coffeeStores = localStores.localStores;
@@ -36,10 +71,18 @@ export default function CoffeeStaore({initialCoffeeStores}) {
                 const findByCoffeeStoreById = coffeeStores.find((coffeeStore)=>{
                     return coffeeStore.fsq_id.toString() === id;
                 });
-                setCoffeeStore(findByCoffeeStoreById);
+
+                if(findByCoffeeStoreById){
+                    setCoffeeStore(findByCoffeeStoreById);
+                    handleCreateCoffeeStore(findByCoffeeStoreById);
+                }
+
             }
+        } else {
+            handleCreateCoffeeStore(initialCoffeeStores);
         }
-    }, [id]);
+
+    }, [id, initialCoffeeStores]);
 
    
 
