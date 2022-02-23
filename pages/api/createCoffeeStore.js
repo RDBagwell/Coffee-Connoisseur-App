@@ -1,4 +1,4 @@
-import {table, getMinifiedRecords} from '../../lib/airtable';
+import {table, getMinifiedRecords, findRecordByFilter} from '../../lib/airtable';
 
 export default async function createCoffeeStore(req, res){
 
@@ -11,12 +11,10 @@ export default async function createCoffeeStore(req, res){
         } else {
 
             if (req.method === 'POST') {
-                const findCoffeeStoreRecords = await table.select({
-                    filterByFormula: `id="${id}"`
-                }).firstPage();
+                const findCoffeeStoreRecords = await findRecordByFilter(id);
     
                 if(findCoffeeStoreRecords.length !== 0){
-                    const records = getMinifiedRecords(findCoffeeStoreRecords)
+                    const records = findCoffeeStoreRecords;
                     res.status(200).json(records);
                 } else {
                     const createRecords = await table.create([
@@ -31,7 +29,7 @@ export default async function createCoffeeStore(req, res){
                             }
                         }
                     ]);
-                    res.status(200).json({succsse: "Created Record", records: getMinifiedRecords(createRecords)});
+                    res.status(200).json({succsse: "Created Record", records: getMinifiedRecords(findCoffeeStoreRecords)});
                 }
                 
             } else {

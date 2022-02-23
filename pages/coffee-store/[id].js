@@ -17,12 +17,6 @@ export default function CoffeeStaore({initialCoffeeStores}) {
         return <div>Loading...</div>
     }
 
-    let stars = 0
-
-    const handleUpVoteButton = ()=>{
-        return stars++;
-    }
-
     const id = router.query.id;
 
     const [coffeeStore, setCoffeeStore] = useState(initialCoffeeStores);
@@ -88,6 +82,15 @@ export default function CoffeeStaore({initialCoffeeStores}) {
 
     const {name, address, locality, imageURL} = coffeeStore;
 
+    const [voteCount, setVoteCount] = useState(0);
+
+
+    const handleUpVoteButton = ()=>{
+        let stars = voteCount + 1;
+        setVoteCount(stars);
+        // return stars++;
+    }
+
     return (
         <div className={styles.layout}> 
             <Head>
@@ -116,7 +119,7 @@ export default function CoffeeStaore({initialCoffeeStores}) {
                     </div>
                     <div className={styles.iconWrapper}>
                         <Image src="/static/icons/star.svg" width={24} height={24} />
-                        <p className={styles.text}>{stars}</p>
+                        <p className={styles.text}>{voteCount}</p>
                     </div>
                     <button className={styles.upvoteButton} onClick={handleUpVoteButton}>Up Vote</button>
                 </div>
