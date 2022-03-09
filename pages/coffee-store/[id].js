@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useContext, useEffect, useState } from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
@@ -76,7 +78,7 @@ export default function CoffeeStaore({initialCoffeeStores}) {
             handleCreateCoffeeStore(initialCoffeeStores);
         }
 
-    }, [id, initialCoffeeStores]);
+    }, [id, initialCoffeeStores, localStores.localStores]);
 
    
 
